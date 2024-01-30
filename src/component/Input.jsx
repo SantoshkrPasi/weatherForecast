@@ -4,12 +4,12 @@ import { useWeather } from "../context/Weather";
 function Input() {
   const WeatherReport = useWeather();
 
-   return (
+  return (
     <input
       className="input-field"
       placeholder="Enter City"
       value={WeatherReport.searchCity}
-      onChange={(e)=>WeatherReport.setSearchCity(e.target.value)}
+      onChange={(e) => WeatherReport.setSearchCity(e.target.value)}
     />
   );
 }

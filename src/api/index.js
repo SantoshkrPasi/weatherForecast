@@ -3,7 +3,7 @@ const baseUrl = `https://api.weatherapi.com/v1/current.json?key=28c58896f8ff4971
 export const getWeatherDataForCity = async (city) => {
   try {
     const response = await fetch(`${baseUrl}&q=${city}&aqi=yes`);
-      return await response.json();
+    return await response.json();
   } catch (error) {
     console.error("Error in getWeatherDataForCity:", error.message);
 
@@ -11,10 +11,10 @@ export const getWeatherDataForCity = async (city) => {
   }
 };
 
-export const getWeatherDataForLocation = async (lat ,lon) => {
+export const getWeatherDataForLocation = async (lat, lon) => {
   try {
     const response = await fetch(`${baseUrl}&q=${lat},${lon}&aqi=yes`);
-      return await response.json();
+    return await response.json();
   } catch (error) {
     console.error("Error in getWeatherDataForCity:", error.message);
 
