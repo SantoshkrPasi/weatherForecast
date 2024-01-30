@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Button from './component/Button'
+import Card from './component/Card'
+import Input from './component/Input'
+import { useWeather } from './context/Weather';
+
 
 function App() {
+
+ const WeaherReport = useWeather();
+  const handleClick = async (e) =>{
+    if(e.target.id === "sef")
+    {
+      WeaherReport.fetchData();
+    }
+
+    else if(e.target.id === "ref")
+    {
+      window.location.reload();
+    }
+  
+   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+     <h1>Weaher Forecast</h1>
+    <Input />   
+    <Button clas='sef' value="Search" onClick = {handleClick}/>
+    <Card />   
+    <Button clas='ref' value="Refresh" onClick = {handleClick}/>      
     </div>
   );
 }
